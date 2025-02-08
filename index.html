@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script type="module" defer src="dist/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1> Simulador de Investimento</h1>
+        <div class="btnHeader">
+            <div class="hamburguerMenu"></div>
+        </div>
+        <nav class="menuHeader">
+            <ul>
+                <li><a href="">Inicio</a></li>
+                <li><a href="">Como Funcioina?</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="oneSection">
+            <h2>Calculadora de Investimentos Online</h2>
+            <form action="">
+                <div>
+                    <label for="valor">Valor a ser investido</label>
+                    <div>R$</div>
+                    <input type="number" id="valor" name="valor">
+                </div>
+                <div>
+                    <label for="investimentoMensal"> Investimento mensal</label>
+                    <div>R$</div>
+                    <input type="number" id="investimentoMensal" name="investimentoMensal">
+                </div>
+                <div>
+                    <label for="tempo">Tempo de investimento</label>
+                    <div>
+                        <Select>
+                            <option value="anos">Anos</option>
+                            <option value="meses">Meses</option>
+                        </Select>
+                    </div>
+                    <input type="number" id="tempo" name="tempo">
+                </div>
+                <div>
+                    <label for="rentabilidade">Rentabilidade</label>
+                    <div>%</div>
+                    <div>
+                        <Select>
+                            <option value="anos">Anos</option>
+                            <option value="meses">Meses</option>
+                        </Select>
+                    </div>
+                    <input type="number" id="rentabilidade" name="rentabilidade">
+                </div>
+                <div>
+                    <button>Simular</button>
+                    <button class="clearForm">Limpar</button>
+                </div>
+            </form>
+        </section>
+        <section class="twoSection">
+            <h2>Resultados</h2>
+            <article>
+                <div>
+                    <span>Valor total bruto</span>
+                    <span>R$ 1.228,12</span>
+                </div>
+                <div>
+                    <span>Valor investido</span>
+                    <span>R$ 1.200,67</span>
+                </div>
+                <div>
+                    <span>Valor em juros</span>
+                    <span>R$ 27,45</span>
+                </div>
+            </article>
+            <article>
+                <h3>Minha Simulação</h3>
+                <div>
+                    <div>
+                        <span>Investimento Inicial</span>
+                        <div></div>
+                    </div>
+                    <div>
+                        <span> Investimento Mensal</span>
+                        <div></div>
+                    </div>
+                    <div>
+                        <span> Prazo</span>
+                        <div></div>
+                    </div>
+                    <div>
+                        <span> Rentabilidade</span>
+                        <div></div>
+                    </div>
+                </div>
+            </article>
+            <div><i></i><i></i></div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+/* 🔹 Estilização do Header */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    overflow: hidden;
+}
+
+/* 🔹 Título */
+header h1 {
+    font-size: 1.3rem;
+}
+
+/* 🔹 Botão do Menu */
+.btnHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+}
+
+/* 🔹 Menu Hambúrguer */
+.hamburguerMenu {
+    width: 2rem;
+    height: 3px;
+    background-color: var(--color-white);
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+.hamburguerMenu::before,
+.hamburguerMenu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-white);
+    transition: 0.3s ease-in-out;
+}
+
+.hamburguerMenu::before {
+    top: -8px;
+}
+
+.hamburguerMenu::after {
+    top: 8px;
+}
+
+/* 🔹 Animação do Menu Hambúrguer (Ativo) */
+.hamburguerMenu.on {
+    background-color: transparent;
+}
+
+.hamburguerMenu.on::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburguerMenu.on::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+/* 🔹 Navegação */
+header nav {
+    position: absolute;
+    top: 5rem;
+    right: -100%;
+    background-color: var(--color-primary);
+    border-radius: 0 0 0 8px;
+    transition: right 0.3s ease-in-out;
+}
+
+/* 🔹 Lista do Menu */
+header nav ul {
+    list-style: none;
+    padding: 1rem;
+    text-align: end;
+    font-weight: 400;
+}
+
+header nav ul li {
+    overflow-x: hidden;
+    margin: 0.5rem 0;
+}
+
+header nav ul li a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* 🔹 Menu visível */
+header nav.on {
+    right: 0;
+}
+
+/* 🔹 Layout para Telas Maiores */
+@media (min-width: 768px) {
+    header {
+        justify-content: space-between;
+    }
+
+    header nav {
+        position: static;
+        display: flex;
+        background: none;
+        border-radius: 0;
+        transition: none;
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0;
+    }
+
+    .hamburguerMenu {
+        display: none;
+    }
+}
