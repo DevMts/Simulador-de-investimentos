@@ -71,6 +71,7 @@
     justify-content: space-between;
     align-items: center;
     padding: .5rem;
+    height: 2rem;
     background-color: var(--color-white);
     gap: 1rem;
     border-radius: 3.6px;
@@ -117,7 +118,6 @@
 
     .twoSection .simulationDetails>div {
         width: 100%;
-        border: 1px solid var(--color-gray-200);
         flex-direction: row;
         flex-wrap: wrap;
     }
@@ -128,25 +128,15 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-    .twoSection .result div span:nth-child(1) {
-        font-size: .6rem;
-        font-family: var(--font-poppins);
-        color: var(-color-gray-100);
-    }
-
-    .twoSection .result div span:nth-child(2) {
-        font-size: 1.139rem;
-        font-family: var(--font-poppins);
-        color: var(--color-dimgray);
-    }
     .twoSection .result div {
-        width: 50% ;
+        width: 50%;
     }
 
     .twoSection .result {
         flex-wrap: wrap;
         flex-direction: row;
     }
+
     .twoSection .simulationDetails>div>div {
         width: 70%;
     }
