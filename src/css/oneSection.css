@@ -175,6 +175,7 @@
     grid-area: input;
     border: none;
     border-radius: 0;
+    height: 2rem;
 }
 
 .oneSection select:focus,
@@ -220,6 +221,10 @@
     }
     .oneSection form{
         flex-wrap: wrap;
+        flex-direction: row;
+    }
+    .oneSection form div{
+        width: 40%;
     }
 
 }
