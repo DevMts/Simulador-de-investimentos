@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+    width: 100%;
 }
 
 .fourSection h2 {
@@ -19,9 +20,16 @@
     border-radius: 8px;
     background-color: var(--color-thistle);
 }
+
 .fourSection div canvas {
     width: 90%;
     height: 90%;
     border-radius: 8px;
     outline: 1px solid red;
+}
+
+@media(min-width: 1024px) {
+    .fourSection {
+        width: 50%;
+    }
 }

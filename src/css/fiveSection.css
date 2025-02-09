@@ -1,0 +1,47 @@
+.fiveSection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.fiveSection h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.fiveSection article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+    background-color: var(--color-thistle);
+    border-radius: 8px;
+}
+
+.fiveSection article div {
+    width: 40%;
+    background-color: var(--color-white);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem;
+}
+
+.fiveSection article div>span {
+    font-size: 0.6rem;
+    font-family: var(--font-poppins);
+    color: #7d7d7d;
+    text-align: center;
+}
+@media (min-width: 1024px) {
+    .fiveSection{
+        width: 40%;
+    }
+}

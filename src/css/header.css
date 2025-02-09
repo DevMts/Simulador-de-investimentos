@@ -7,7 +7,7 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* 🔹 Título */
@@ -76,6 +76,7 @@ header nav {
     background-color: var(--color-primary);
     border-radius: 0 0 0 8px;
     transition: right 0.3s ease-in-out;
+    overflow-x: hidden;
 }
 
 /* 🔹 Lista do Menu */
@@ -84,6 +85,7 @@ header nav ul {
     padding: 1rem;
     text-align: end;
     font-weight: 400;
+    overflow-x: hidden;
 }
 
 header nav ul li {
@@ -100,6 +102,7 @@ header nav ul li a {
 /* 🔹 Menu visível */
 header nav.on {
     right: 0;
+    
 }
 
 /* 🔹 Layout para Telas Maiores */
