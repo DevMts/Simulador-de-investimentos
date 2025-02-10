@@ -1,4 +1,6 @@
-export class clearForm {
+export class ClearForm {
+    form;
+    btn;
     constructor(form, btn) {
         this.form = document.querySelector(form);
         this.btn = document.querySelector(btn);
@@ -13,16 +15,13 @@ export class clearForm {
         }
     }
     preventSubmit() {
-        var _a;
-        (_a = this.form) === null || _a === void 0 ? void 0 : _a.addEventListener('submit', (event) => {
+        this.form?.addEventListener('submit', (event) => {
             event.preventDefault();
         });
     }
     addEvent() {
-        var _a;
-        (_a = this.btn) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
-            var _a;
-            (_a = this.form) === null || _a === void 0 ? void 0 : _a.reset();
+        this.btn?.addEventListener('click', () => {
+            this.form?.reset();
         });
     }
 }

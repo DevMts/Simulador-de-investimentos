@@ -1,4 +1,4 @@
-export class clearForm {
+export class ClearForm {
     form: HTMLFormElement | null;
     btn: HTMLElement | null;
     constructor(form: string, btn: string) {

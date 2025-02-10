@@ -25,44 +25,45 @@
     </header>
     <main>
         <section class="oneSection">
-            <h2>Calculadora de Investimentos Online</h2>
-            <form action="">
+            <form id="simuladorInvestimentos">
                 <div>
-                    <label for="valor">Valor a ser investido</label>
+                    <label for="initialInvestment">Valor a ser investido</label>
                     <div>R$</div>
-                    <input type="number" id="valor" name="valor">
+                    <input type="number" id="initialInvestment" name="initialInvestment">
                 </div>
                 <div>
-                    <label for="investimentoMensal"> Investimento mensal</label>
+                    <label for="monthlyInvestment"> Investimento mensal</label>
                     <div>R$</div>
-                    <input type="number" id="investimentoMensal" name="investimentoMensal">
+                    <input type="number" id="monthlyInvestment" name="monthlyInvestment">
                 </div>
                 <div>
-                    <label for="tempo">Tempo de investimento</label>
+                    <label for="investmentPeriodValue">Tempo de investimento</label>
                     <div>
-                        <Select>
-                            <option value="anos">Anos</option>
-                            <option value="meses">Meses</option>
-                        </Select>
+                        <select id="investmentPeriod" name="investmentPeriodperiod">
+                            <option value="years">Anos</option>
+                            <option value="months">Meses</option>
+                        </select>
                     </div>
-                    <input type="number" id="tempo" name="tempo">
+                    <input type="number" id="investmentPeriodValue" name="investmentPeriodvalue">
                 </div>
                 <div>
-                    <label for="rentabilidade">Rentabilidade</label>
+                    <label for="profitabilityValue">Rentabilidade</label>
                     <div>%</div>
                     <div>
-                        <Select>
-                            <option value="anos">Anos</option>
-                            <option value="meses">Meses</option>
-                        </Select>
+                        <select id="profitability" name="profitabilityPeriod">
+                            <option value="years">Anos</option>
+                            <option value="months">Meses</option>
+                        </select>
                     </div>
-                    <input type="number" id="rentabilidade" name="rentabilidade">
+                    <input type="number" id="profitabilityValue" name="profitabilityValue">
                 </div>
                 <div>
-                    <button>Simular</button>
-                    <button class="clearForm">Limpar</button>
+                    <button type="submit" id="simulate">Simular</button>
+                    <button type="button" class="clearForm">Limpar</button>
                 </div>
             </form>
+
+
         </section>
         <section class="twoSection">
             <h2>Resultados</h2>
