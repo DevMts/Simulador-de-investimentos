@@ -31,6 +31,9 @@
     width: 70%;
     margin: 0 auto;
 }
+.oneSection form div input {
+    padding-left: 1rem;
+}
 
 .oneSection form div:nth-child(1),
 .oneSection form div:nth-child(2) {
@@ -235,6 +238,7 @@
     .oneSection form {
         flex-direction: column;
     }
+
     .oneSection form div {
         width: 70%;
     }

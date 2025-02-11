@@ -1,17 +1,26 @@
 export class ClearForm {
     form;
     btn;
-    constructor(form, btn) {
+    type;
+    constructor(form, btn, type) {
         this.form = document.querySelector(form);
         this.btn = document.querySelector(btn);
+        this.type = type.toLowerCase();
     }
     init() {
-        if (this.form && this.btn) {
-            this.addEvent();
-            this.preventSubmit();
-        }
-        else {
-            console.error('Erro: Elemento não encontrado');
+        switch (this.type) {
+            case 'btn':
+                if (this.form && this.btn) {
+                    this.addEvent();
+                    this.preventSubmit();
+                }
+                else {
+                    console.error('Erro: Elemento não encontrado');
+                }
+            case 'form':
+                if (this.form) {
+                    this.form?.reset();
+                }
         }
     }
     preventSubmit() {

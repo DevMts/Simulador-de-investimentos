@@ -1,19 +1,29 @@
 export class ClearForm {
     form: HTMLFormElement | null;
     btn: HTMLElement | null;
-    constructor(form: string, btn: string) {
+    type: string;
+    constructor(form: string, btn: string, type: string) {
         this.form = document.querySelector(form) as HTMLFormElement;
         this.btn = document.querySelector(btn);
+        this.type = type.toLowerCase();
     }
     init() {
-        if (this.form && this.btn) {
-            this.addEvent();
-            this.preventSubmit()
+        switch (this.type) {
+            case 'btn':
+                if (this.form && this.btn) {
+                    this.addEvent();
+                    this.preventSubmit()
 
-        } else {
-            console.error('Erro: Elemento não encontrado');
+                } else {
+                    console.error('Erro: Elemento não encontrado');
+                }
+            case 'form':
+                if (this.form) {
+                    this.form?.reset();
+
+                }
+
         }
-
     }
     preventSubmit() {
         this.form?.addEventListener('submit', (event) => {
@@ -25,5 +35,6 @@ export class ClearForm {
             this.form?.reset();
         });
     }
+
 
 }
