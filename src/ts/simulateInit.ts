@@ -26,23 +26,45 @@ export class SimulateInvestment {
 
     calculateCompoundInterest(): number {
         const timeInMonths = this.periodConfig();
-        const monthlyRate = this.profitabilityValue / 100; // Convertendo % para decimal
+        const monthlyRate = this.profitabilityPeriod === 'years'
+            ? (this.profitabilityValue / 100) / 12
+            : this.profitabilityValue / 100;
 
-        // Cálculo do montante inicial com juros
         const montanteInicial = this.initialInvestment * Math.pow(1 + monthlyRate, timeInMonths);
 
-        // Cálculo do montante dos aportes mensais (se houver)
         const montanteAportes = this.monthlyInvestment > 0
             ? this.monthlyInvestment * ((Math.pow(1 + monthlyRate, timeInMonths) - 1) / monthlyRate)
             : 0;
 
         return montanteInicial + montanteAportes;
     }
+    calculateInvestmentValue(): number {
+        return this.initialInvestment + this.monthlyInvestment * this.periodConfig();
+    }
+    calculateProfit(): number {
+        return this.calculateCompoundInterest() - this.calculateInvestmentValue();
+    }
 
-    init(): void {
+    init() {
         const montanteFinal = this.calculateCompoundInterest();
         console.log(`Montante final após ${this.periodConfig()} meses: R$ ${montanteFinal.toFixed(2)}`);
+        console.log(`Valor total investido: R$ ${this.calculateInvestmentValue().toFixed(2)}`);
+        console.log(`Lucro obtido: R$ ${this.calculateProfit().toFixed(2)}`)
+
         const form = new ClearForm('form', '.clearForm', 'form');
         form.init();
+        return {
+            "brute": Number(montanteFinal.toFixed(2)),
+            "Invested": Number(this.calculateInvestmentValue().toFixed(2)),
+            "Profit": Number(this.calculateProfit().toFixed(2)),
+            "mySimulate": {
+                "period": this.periodConfig(),
+                "rate": this.profitabilityPeriod === 'years'
+                    ? (this.profitabilityValue) / 12
+                    : this.profitabilityValue,
+                "start": this.initialInvestment,
+                "monthly": this.monthlyInvestment
+            }
+        }
     }
 }

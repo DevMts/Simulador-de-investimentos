@@ -18,6 +18,7 @@
     justify-content: center;
     width: 100%;
     border-radius: 8px;
+    padding: 1rem;
     background-color: var(--color-thistle);
 }
 
@@ -26,6 +27,8 @@
     height: 90%;
     border-radius: 8px;
     outline: 1px solid red;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Fira Code';
 }
 
 @media(min-width: 1024px) {

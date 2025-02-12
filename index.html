@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="src/css/style.css">
     <script type="module" defer src="dist/main.js"></script>
     <script defer src="https://kit.fontawesome.com/af48f1280d.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -25,6 +27,7 @@
     </header>
     <main>
         <section class="oneSection">
+            <h2>Simule seu investimento agora</h2>
             <form id="simuladorInvestimentos">
                 <div>
                     <label for="initialInvestment">Valor a ser investido</label>
@@ -71,15 +74,15 @@
                 <div class="result">
                     <div>
                         <span>Valor total bruto</span>
-                        <span>R$ 1.228,12</span>
+                        <span id="brute"></span>
                     </div>
                     <div>
                         <span>Valor investido</span>
-                        <span>R$ 1.200,67</span>
+                        <span id="invested"></span>
                     </div>
                     <div>
                         <span>Valor em juros</span>
-                        <span>R$ 27,45</span>
+                        <span id="interest"></span>
                     </div>
                 </div>
                 <div class="simulationDetails">
@@ -87,19 +90,19 @@
                     <div>
                         <div>
                             <span>Investimento Inicial</span>
-                            <div>R$<span></span></div>
+                            <div>R$<span id="initialInvestmentResult"></span></div>
                         </div>
                         <div>
                             <span> Investimento Mensal</span>
-                            <div>R$<span></span></div>
+                            <div>R$<span id="monthlyInvestmentResult"></span></div>
                         </div>
                         <div>
                             <span> Prazo(meses)</span>
-                            <div></div>
+                            <div><span id="period"></span></div>
                         </div>
                         <div>
                             <span> Rentabilidade %/mês</span>
-                            <div><span></span>%</div>
+                            <div><span id="rentability"></span>%</div>
                         </div>
                     </div>
                 </div>
@@ -112,7 +115,7 @@
         <section class="fourSection">
             <h2>Comparação entre Investimento e Retorno</h2>
             <div>
-                <canvas></canvas>
+                <canvas id="myChart"></canvas>
             </div>
         </section>
         <section class="fiveSection">
@@ -174,8 +177,11 @@
                 </div>
             </article>
         </section>
-
     </main>
+
+
 </body>
+
+
 
 </html>
