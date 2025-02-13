@@ -9,6 +9,8 @@
     <script type="module" defer src="dist/main.js"></script>
     <script defer src="https://kit.fontawesome.com/af48f1280d.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 
 </head>
 
@@ -70,7 +72,7 @@
         </section>
         <section class="twoSection">
             <h2>Resultados</h2>
-            <article>
+            <article id="resultados">
                 <div class="result">
                     <div>
                         <span>Valor total bruto</span>
@@ -107,8 +109,7 @@
                     </div>
                 </div>
                 <div class="shareDownload">
-                    <i class="fa-solid fa-share"></i>
-                    <i class="fa-solid fa-download"></i>
+                    <i class="fa-solid fa-download" onclick="gerarPDF()" id="downloadPdf"></i>
                 </div>
             </article>
         </section>
@@ -180,8 +181,7 @@
     </main>
 
 
+
 </body>
-
-
 
 </html>

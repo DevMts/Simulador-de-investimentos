@@ -8,6 +8,7 @@ import { RenderPage } from './render.js';
 
 // Fuctions Auxiliares
 import { getFormData } from './getDates.js';
+import { gerarPDF } from './pdfDownload.js';
 
 // Interfaces
 import { InvestmentSimulationForm } from './models/InvestmentData.js';
@@ -35,4 +36,7 @@ document.querySelector('#simulate')?.addEventListener('click', () => {
     addGraphics.init();
     const newRender = new RenderPage(dates);
     newRender.init();
+    document.querySelector('#downloadPdf')?.addEventListener('click', () => {
+        gerarPDF()
+    })
 })

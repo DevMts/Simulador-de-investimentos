@@ -5,6 +5,7 @@ import { SimulateInvestment } from './simulateInit.js';
 import { AddGraphics } from './addGrapichs.js';
 import { RenderPage } from './render.js';
 import { getFormData } from './getDates.js';
+import { gerarPDF } from './pdfDownload.js';
 const menu = new Menu('.menuHeader', '.hamburguerMenu');
 menu.init();
 const form = new ClearForm('form', '.clearForm', 'btn');
@@ -24,4 +25,7 @@ document.querySelector('#simulate')?.addEventListener('click', () => {
     addGraphics.init();
     const newRender = new RenderPage(dates);
     newRender.init();
+    document.querySelector('#downloadPdf')?.addEventListener('click', () => {
+        gerarPDF();
+    });
 });
