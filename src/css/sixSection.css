@@ -19,9 +19,10 @@
     gap: 1rem;
 }
 
-.sixSection article div {
+.sixSection article>div {
     width: 80%;
     background-color: #d9d9d9;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     border-radius: 8px;
     display: flex;
     justify-content: center;

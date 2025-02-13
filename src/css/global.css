@@ -9,6 +9,7 @@
 
 body {
     overflow-x: hidden;
+    background-color: var(--color-white);
 }
 
 a {
@@ -34,8 +35,8 @@ main {
 
 
 :root {
-    /* Colors */
-    --color-white: #fff;
+    /* Cores base */
+    --color-white: #ffffff; /* Corrigido para branco */
     --color-primary: #522cba;
     --color-black: #000;
     --color-dimgray: #505050;
@@ -44,4 +45,6 @@ main {
     --color-thistle: #c9b7ff;
     --color-darkslategray: #464646;
     --color-lightgray: #d3d3d3;
-}
+  
+
+  }
