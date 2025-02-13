@@ -26,7 +26,9 @@ header h1 {
 }
 
 /* 🔹 Menu Hambúrguer */
-.hamburguerMenu {
+.hamburguerMenu,
+.hamburguerMenu::before,
+.hamburguerMenu::after {
     width: 2rem;
     height: 3px;
     background-color: var(--color-white);
@@ -40,9 +42,6 @@ header h1 {
     position: absolute;
     left: 0;
     width: 100%;
-    height: 3px;
-    background-color: var(--color-white);
-    transition: 0.3s ease-in-out;
 }
 
 .hamburguerMenu::before {
@@ -72,11 +71,11 @@ header h1 {
 header nav {
     position: absolute;
     top: 5rem;
+    display: none;
     right: -100%;
     background-color: var(--color-primary);
     border-radius: 0 0 0 8px;
     transition: right 0.3s ease-in-out;
-    overflow-x: hidden;
 }
 
 /* 🔹 Lista do Menu */
@@ -85,11 +84,9 @@ header nav ul {
     padding: 1rem;
     text-align: end;
     font-weight: 400;
-    overflow-x: hidden;
 }
 
 header nav ul li {
-    overflow-x: hidden;
     margin: 0.5rem 0;
 }
 
@@ -102,7 +99,7 @@ header nav ul li a {
 /* 🔹 Menu visível */
 header nav.on {
     right: 0;
-    
+    display: flex;
 }
 
 /* 🔹 Layout para Telas Maiores */
