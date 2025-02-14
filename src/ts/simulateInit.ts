@@ -29,9 +29,9 @@ export class SimulateInvestment {
     calculateCompoundInterest(): number {
         const timeInMonths = this.periodConfig();
         const monthlyRate = this.profitabilityPeriod === 'years'
-            ? (this.profitabilityValue / 100) / 12
+            ? ((this.profitabilityValue / 100) + 1) ** (1 / 12) - 1
             : this.profitabilityValue / 100;
-        // console.log(timeInMonths);
+        console.log(monthlyRate);
 
 
         const montanteInicial = this.initialInvestment * Math.pow(1 + monthlyRate, timeInMonths);

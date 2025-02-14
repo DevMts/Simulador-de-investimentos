@@ -34,7 +34,7 @@ export class AddGraphics {
         const comJuros = [];
         const totalPeriods = this.periodConfig();
         const interestRate = this.profitability.period === "years"
-            ? this.profitability.value / 12 / 100
+            ? ((this.profitability.value / 100) + 1) ** (1 / 12) - 1
             : this.profitability.value / 100;
         let currentInvestment = this.initialInvestment;
         let currentValueWithInterest = this.initialInvestment;
