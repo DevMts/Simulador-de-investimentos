@@ -22,8 +22,8 @@
         </div>
         <nav class="menuHeader">
             <ul>
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Como Funcioina?</a></li>
+                <li><a href="#oneSection">Inicio</a></li>
+                <li><a href="#sixSection">Como Funciona?</a></li>
             </ul>
         </nav>
     </header>
@@ -109,7 +109,7 @@
                     </div>
                 </div>
                 <div class="shareDownload">
-                    <i class="fa-solid fa-download" onclick="gerarPDF()" id="downloadPdf"></i>
+                    <i class="fa-solid fa-download" id="downloadPdf"></i>
                 </div>
             </article>
         </section>
@@ -123,33 +123,33 @@
             <h2>Comparação com Outros Investimentos</h2>
             <article>
                 <div>
-                    <span>Tesouro Direto</span>
-                    <p><span>R$</span></p>
+                    <span>Tesouro Selic</span>
+                    <p>R$<span id="tesouroSelic"></span></p>
                 </div>
                 <div>
-                    <span>CDB</span>
-                    <p><span>R$</span></p>
+                    <span>Tesouro Pre. 2029</span>
+                    <p>R$<span id="tesouroPre2029"></span></p>
                 </div>
                 <div>
-                    <span>FIIs</span>
-                    <p><span>R$</span></p>
+                    <span>CDB fixo</span>
+                    <p>R$<span id="cdbFixo"></span></p>
                 </div>
                 <div>
-                    <span>Ações</span>
-                    <p><span>R$</span></p>
+                    <span>LCI/LCA</span>
+                    <p>R$<span id="lciLca"></span></p>
                 </div>
                 <div>
-                    <span>ETFs</span>
-                    <p><span>R$</span></p>
+                    <span>CRI/CRA</span>
+                    <p>R$<span id="criCra"></span></p>
                 </div>
                 <div>
-                    <span>Bitcoin</span>
-                    <p><span>R$</span></p>
+                    <span>Debêntures</span>
+                    <p>R$<span id="debentures"></span></p>
                 </div>
             </article>
         </section>
-        <section class="sixSection">
-            <h2>Como Funcioina?</h2>
+        <section class="sixSection" id="sixSection">
+            <h2>Como Funciona?</h2>
             <article>
 
                 <div>
@@ -179,9 +179,41 @@
             </article>
         </section>
     </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <h2>Simulador de Investimentos</h2>
+                <p>Faça projeções inteligentes para o seu futuro financeiro.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Simulador</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h3>Redes Sociais</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fab fa-github"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Simulador de Investimentos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
 
 
 
 </body>
+
 
 </html>

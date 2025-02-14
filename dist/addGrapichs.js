@@ -12,6 +12,7 @@ export class AddGraphics {
     }
     init() {
         this.createChart(this.transformValueInvestments(), this.transformValuePeriods());
+        return this.transformValueInvestments(), this.transformValuePeriods();
     }
     transformValuePeriods() {
         const months = ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"];

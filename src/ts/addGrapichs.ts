@@ -1,6 +1,6 @@
 import { InvestmentSimulationForm } from "./models/InvestmentData";
 
-let chartInstance: typeof Chart | null = null; // Variável global para armazenar a instância do gráfico
+let chartInstance: typeof Chart | null = null;
 
 export class AddGraphics {
     private initialInvestment: number;
@@ -15,8 +15,9 @@ export class AddGraphics {
         this.profitability = data.profitability;
     }
 
-    init() {
+    init(): string[] {
         this.createChart(this.transformValueInvestments(), this.transformValuePeriods());
+        return this.transformValueInvestments(), this.transformValuePeriods()
     }
 
     transformValuePeriods(): string[] {

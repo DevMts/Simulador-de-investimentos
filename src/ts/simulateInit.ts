@@ -16,9 +16,11 @@ export class SimulateInvestment {
         this.investmentPeriodValue = investmentPeriod.value;
         this.profitabilityPeriod = profitability.period;
         this.profitabilityValue = profitability.value;
+
     }
 
     periodConfig(): number {
+        console.log(this.profitabilityValue);
         return this.investmentPeriod === 'years'
             ? this.investmentPeriodValue * 12
             : this.investmentPeriodValue;
@@ -29,6 +31,8 @@ export class SimulateInvestment {
         const monthlyRate = this.profitabilityPeriod === 'years'
             ? (this.profitabilityValue / 100) / 12
             : this.profitabilityValue / 100;
+        // console.log(timeInMonths);
+
 
         const montanteInicial = this.initialInvestment * Math.pow(1 + monthlyRate, timeInMonths);
 
@@ -44,27 +48,43 @@ export class SimulateInvestment {
     calculateProfit(): number {
         return this.calculateCompoundInterest() - this.calculateInvestmentValue();
     }
+    InvestmentComparison(): number[] {
+        const profitabilityValues = [13.75, 11.50, 12, 10.50, 10.75, 11];
+        return profitabilityValues.map(value => {
+            const tempSimulate = new SimulateInvestment({
+                initialInvestment: this.initialInvestment,
+                monthlyInvestment: this.monthlyInvestment,
+                investmentPeriod: { period: this.investmentPeriod, value: this.investmentPeriodValue },
+                profitability: { period: 'years', value }
+            });
+            return Number(tempSimulate.calculateCompoundInterest().toFixed());
+        });
+    }
+
 
     init() {
         const montanteFinal = this.calculateCompoundInterest();
-        console.log(`Montante final após ${this.periodConfig()} meses: R$ ${montanteFinal.toFixed(2)}`);
-        console.log(`Valor total investido: R$ ${this.calculateInvestmentValue().toFixed(2)}`);
-        console.log(`Lucro obtido: R$ ${this.calculateProfit().toFixed(2)}`)
+        const invested = this.calculateInvestmentValue();
+        const profit = montanteFinal - invested;
+        const comparison = this.InvestmentComparison(); // Executa só uma vez
 
         const form = new ClearForm('form', '.clearForm', 'form');
         form.init();
+
         return {
             "brute": Number(montanteFinal.toFixed(2)),
-            "Invested": Number(this.calculateInvestmentValue().toFixed(2)),
-            "Profit": Number(this.calculateProfit().toFixed(2)),
+            "Invested": Number(invested.toFixed(2)),
+            "Profit": Number(profit.toFixed(2)),
             "mySimulate": {
                 "period": this.periodConfig(),
                 "rate": this.profitabilityPeriod === 'years'
-                    ? (this.profitabilityValue) / 12
+                    ? this.profitabilityValue / 12
                     : this.profitabilityValue,
                 "start": this.initialInvestment,
                 "monthly": this.monthlyInvestment
-            }
-        }
+            },
+            "comparison": comparison
+        };
     }
+
 }

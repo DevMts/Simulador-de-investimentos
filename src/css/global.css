@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -7,9 +8,14 @@
     font-family: Poppins;
 }
 
+
+
+
 body {
     overflow-x: hidden;
+    user-select: none ;
     background-color: var(--color-white);
+    cursor: default;
 }
 
 a {
@@ -36,7 +42,8 @@ main {
 
 :root {
     /* Cores base */
-    --color-white: #ffffff; /* Corrigido para branco */
+    --color-white: #ffffff;
+    /* Corrigido para branco */
     --color-primary: #522cba;
     --color-black: #000;
     --color-dimgray: #505050;
@@ -45,6 +52,6 @@ main {
     --color-thistle: #c9b7ff;
     --color-darkslategray: #464646;
     --color-lightgray: #d3d3d3;
-  
 
-  }
+
+}

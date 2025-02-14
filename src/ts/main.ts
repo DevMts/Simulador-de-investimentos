@@ -7,8 +7,6 @@ import { getFormData } from "./getDates.js";
 import { gerarPDF } from "./pdfDownload.js";
 import { InvestmentSimulationForm } from "./models/InvestmentData.js";
 
-console.log("Simulador de Investimentos Iniciado!");
-
 // Inicializa o menu de navegação
 const menu = new Menu(".menuHeader", ".hamburguerMenu");
 menu.init();
@@ -18,11 +16,10 @@ const form = new ClearForm("form", ".clearForm", "btn");
 form.init();
 
 let formDate: InvestmentSimulationForm;
-let addGraphics: AddGraphics | null = null; // Armazena a instância para reaproveitamento
+let addGraphics: AddGraphics | null = null;
 
 document.querySelector("#simulate")?.addEventListener("click", () => {
     formDate = getFormData();
-    console.log(formDate);
 
     const simulate = new SimulateInvestment(formDate);
     const dates = {
@@ -30,7 +27,9 @@ document.querySelector("#simulate")?.addEventListener("click", () => {
         invested: simulate.init().Invested,
         profit: simulate.init().Profit,
         mySimulate: simulate.init().mySimulate,
+        comparison: simulate.init().comparison,
     };
+
 
     // Se já houver uma instância de AddGraphics, reaproveite-a
     if (!addGraphics) {
@@ -46,4 +45,6 @@ document.querySelector("#simulate")?.addEventListener("click", () => {
     document.querySelector("#downloadPdf")?.addEventListener("click", () => {
         gerarPDF();
     });
+
+
 });

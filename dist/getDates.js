@@ -2,7 +2,6 @@ export const getFormData = () => {
     const form = document.querySelector('form');
     const formData = new FormData(form);
     const formValues = Object.fromEntries(formData.entries());
-    console.log('formValues', formValues);
     const returnForm = {
         initialInvestment: Number(formValues.initialInvestment),
         monthlyInvestment: Number(formValues.monthlyInvestment),

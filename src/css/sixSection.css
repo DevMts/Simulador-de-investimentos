@@ -46,6 +46,10 @@
     font-size: 1.5rem;
     font-weight: 600;
     font-family: Roboto;
+    text-align: center;
+}
+.sixSection article>div>div{
+    text-align: center;
 }
 
 .sixSection article div p {
@@ -61,6 +65,7 @@
     color: var(--color-primary);
     font-weight: 600;
     font-size: 2rem;
+    text-align: center;
 }
 @media (min-width: 768px){
     .sixSection article div {

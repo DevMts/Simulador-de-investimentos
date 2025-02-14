@@ -5,7 +5,6 @@ import { AddGraphics } from "./addGrapichs.js";
 import { RenderPage } from "./render.js";
 import { getFormData } from "./getDates.js";
 import { gerarPDF } from "./pdfDownload.js";
-console.log("Simulador de Investimentos Iniciado!");
 const menu = new Menu(".menuHeader", ".hamburguerMenu");
 menu.init();
 const form = new ClearForm("form", ".clearForm", "btn");
@@ -14,13 +13,13 @@ let formDate;
 let addGraphics = null;
 document.querySelector("#simulate")?.addEventListener("click", () => {
     formDate = getFormData();
-    console.log(formDate);
     const simulate = new SimulateInvestment(formDate);
     const dates = {
         brute: simulate.init().brute,
         invested: simulate.init().Invested,
         profit: simulate.init().Profit,
         mySimulate: simulate.init().mySimulate,
+        comparison: simulate.init().comparison,
     };
     if (!addGraphics) {
         addGraphics = new AddGraphics(formDate);
